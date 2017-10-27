@@ -29,4 +29,4 @@ ggplot(aes(x = day, y = PD_outcome, group = PD_outcome,color = PD_outcome)) +
     theme(legend.position = "bottom") 
 ```
 
-Comment on figure: From this plot, we know that ears develop first at day 3 and 4 and eys develop last at mostly day 13. 
+Comment on figure: From this plot, we know that among these landmarks, ears develop first at day 3 and 4 and eyes develop last at mostly day 13. The ranges of post-natal days of pivot and walk are large.
