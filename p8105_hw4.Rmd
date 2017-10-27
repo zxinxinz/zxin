@@ -14,3 +14,18 @@ library(ggplot2)
 pup = read_csv("./data/FAS_pups.csv")%>%
   clean_names()%>%
   gather(key = PD_oucome, value = day, pd_ears:pd_walk)
+
+# a plot showing the distribution of post-natal days for each developmental landmark
+pup %>% 
+  filter(!is.na(day)) %>%
+ggplot(aes(x = day, y = PD_outcome, group = PD_outcome,color = PD_outcome)) + 
+    geom_density_ridges(scale = .85) + 
+   labs(
+    x = "Post-natal days",
+    y = "Developmental landmark",
+    title = "The distribution of post-natal days for each developmental landmark"
+    ) +
+    theme(legend.position = "bottom") 
+```
+
+Comment on figure: From this plot, we know that ears develop first at day 3 and 4 and eys develop last at mostly day 13.
