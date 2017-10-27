@@ -1,0 +1,16 @@
+---
+title: "p8105_hw4"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(readxl)
+library(ggplot2)
+```
+
+```{r}
+pup = read_csv("./data/FAS_pups.csv")%>%
+  clean_names()%>%
+  gather(key = PD_oucome, value = day, pd_ears:pd_walk)
